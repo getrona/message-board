@@ -1,3 +1,15 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div class= "container">
+    <ul class="nav nav-pills">
+      <li role="presentation" class="active">{{#link-to 'index'}}Home{{/link-to}}</li>
+      <li role="presentation">{{#link-to 'about'}}About{{/link-to}}</li>
+      <li role="presentation">{{#link-to 'contact'}}Contact{{/link-to}}</li>
+    </ul>
+  <header class= "jumbotron">
+    <h1>One Stop Message Board</h1>
+  </header>
+    {{outlet}}
+  <hr>
+  <footer>
+    @Epicodus 2017, All rights reserved.
+  </footer>
+</div>

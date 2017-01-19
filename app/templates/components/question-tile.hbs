@@ -1,5 +1,3 @@
 <li>
-  {{question.query}}? by {{question.name}}<br>
-  {{update-question question=question update="update"}}<br>
-  <button {{action 'delete' question}}>Delete Question</button>
+  {{#link-to 'question' question.id}}{{question.query}}? by {{question.name}}{{/link-to}}
 </li>

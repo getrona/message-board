@@ -1,9 +1,9 @@
-<h3>Questions</h3>
+<h3 align="center">Questions</h3>
 
-<ul>
+<ol>
   {{#each model as |question|}}
     {{question-tile question=question update="update" destroyQuestion="destroyQuestion"}}
   {{/each}}
-</ul>
+</ol>
 
 {{new-question addNewQuestion="addNewQuestion"}}

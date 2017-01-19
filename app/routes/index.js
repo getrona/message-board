@@ -2,13 +2,22 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.findAll('question');
+    return Ember.RSVP.hash({
+      questions: this.store.findAll('question'),
+      answers: this.store.findAll('answer')
+    });
   },
-  
+
   actions: {
     addNewQuestion(params) {
       var neoQuestion = this.store.createRecord('question', params);
       neoQuestion.save();
+      this.transitionTo('index');
+    },
+
+    saveAnswer(params) {
+      var neoAnswer = this.store.createRecord('answer', params);
+      neoAnswer.save();
       this.transitionTo('index');
     }
   }

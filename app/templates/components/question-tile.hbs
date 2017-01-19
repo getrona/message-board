@@ -1,1 +1,4 @@
-{{yield}}
+<li>
+  {{question.query}}? by {{question.name}}
+  <button {{action 'delete' question}}>Delete Question</button>
+</li>

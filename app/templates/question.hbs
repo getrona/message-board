@@ -1,6 +1,11 @@
 <h3 align="center">Question:</h3><br>
-<h2>{{model.query}}? submitted by: {{model.name}}</h2><br>
+<div class="well">
+  <h2>[Q.] {{model.query}} by: {{model.name}}</h2><br>
+</div>
+
 
 {{update-question question=model update="update"}} <br>
 
 {{question-detail question=model destroyQuestion="destroyQuestion"}}
+
+{{new-answer saveAnswer="saveAnswer" question=model}}

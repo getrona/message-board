@@ -15,6 +15,16 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
 
+    saveAnswer(params) {
+      var neoAnswer = this.store.createRecord('answer', params);
+      var question = params.question;
+      question.get('answers').addObject(neoAnswer);
+      neoAnswer.save().then(function(){
+        return question.save();
+      });
+      this.transitionTo('question', question);
+    },
+
     destroyQuestion(question) {
       question.destroyRecord();
       this.transitionTo('index');

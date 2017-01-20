@@ -1,1 +1,11 @@
-<button {{action 'delete' question}}>Delete Question</button>
+<div align="right">
+  <button {{action 'delete' question}}>Delete Question</button>
+</div>
+
+
+<h3 align="center">Replies:</h3>
+<ul>
+  {{#each question.answers as |answer|}}
+    {{answer-tile answer=answer}}
+  {{/each}}
+</ul>

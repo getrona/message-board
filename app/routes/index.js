@@ -7,18 +7,11 @@ export default Ember.Route.extend({
       answers: this.store.findAll('answer')
     });
   },
-
   actions: {
     addNewQuestion(params) {
       var neoQuestion = this.store.createRecord('question', params);
       neoQuestion.save();
       this.transitionTo('index');
     },
-
-    saveAnswer(params) {
-      var neoAnswer = this.store.createRecord('answer', params);
-      neoAnswer.save();
-      this.transitionTo('index');
-    }
   }
 });
